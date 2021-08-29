@@ -1,2 +1,2 @@
-node_modules
-dist
+.jekyll-cache
+_site
