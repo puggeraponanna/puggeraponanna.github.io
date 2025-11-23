@@ -1,36 +1,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
 :root {
-    /* Material 3 Design Tokens - Key Color: Indigo */
-    --md-sys-color-primary: #6750A4;
+    /* Material 3 Design Tokens - Key Color: Blue */
+    --md-sys-color-primary: #0061A4;
     --md-sys-color-on-primary: #FFFFFF;
-    --md-sys-color-primary-container: #EADDFF;
-    --md-sys-color-on-primary-container: #21005D;
+    --md-sys-color-primary-container: #D1E4FF;
+    --md-sys-color-on-primary-container: #001D36;
 
-    --md-sys-color-secondary: #625B71;
+    --md-sys-color-secondary: #535F70;
     --md-sys-color-on-secondary: #FFFFFF;
-    --md-sys-color-secondary-container: #E8DEF8;
-    --md-sys-color-on-secondary-container: #1D192B;
+    --md-sys-color-secondary-container: #D7E3F7;
+    --md-sys-color-on-secondary-container: #101C2B;
 
-    --md-sys-color-tertiary: #7D5260;
+    --md-sys-color-tertiary: #6B5778;
     --md-sys-color-on-tertiary: #FFFFFF;
-    --md-sys-color-tertiary-container: #FFD8E4;
-    --md-sys-color-on-tertiary-container: #31111D;
+    --md-sys-color-tertiary-container: #F2DAFF;
+    --md-sys-color-on-tertiary-container: #251431;
 
-    --md-sys-color-background: #FEF7FF;
-    --md-sys-color-on-background: #1D1B20;
+    --md-sys-color-background: #F8F9FF;
+    --md-sys-color-on-background: #191C20;
 
-    --md-sys-color-surface: #FEF7FF;
-    --md-sys-color-on-surface: #1D1B20;
-    --md-sys-color-surface-variant: #E7E0EC;
-    --md-sys-color-on-surface-variant: #49454F;
-    --md-sys-color-outline: #79747E;
-    --md-sys-color-outline-variant: #CAC4D0;
+    --md-sys-color-surface: #F8F9FF;
+    --md-sys-color-on-surface: #191C20;
+    --md-sys-color-surface-variant: #DFE2EB;
+    --md-sys-color-on-surface-variant: #43474E;
+    --md-sys-color-outline: #73777F;
+    --md-sys-color-outline-variant: #C3C7CF;
 
     /* Surfaces */
-    --md-sys-color-surface-container-low: #F7F2FA;
-    --md-sys-color-surface-container: #F3EDF7;
-    --md-sys-color-surface-container-high: #ECE6F0;
+    --md-sys-color-surface-container-low: #F2F3FA;
+    --md-sys-color-surface-container: #ECEEF5;
+    --md-sys-color-surface-container-high: #E6E8EF;
 
     /* Elevation */
     --md-sys-elevation-1: 0px 1px 2px 0px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
@@ -53,6 +53,38 @@
 
     --font-family: 'Roboto', sans-serif;
     --max-width: 900px;
+}
+
+/* Dark Mode */
+[data-theme="dark"] {
+    --md-sys-color-primary: #9ECAFF;
+    --md-sys-color-on-primary: #003258;
+    --md-sys-color-primary-container: #00497D;
+    --md-sys-color-on-primary-container: #D1E4FF;
+
+    --md-sys-color-secondary: #BAC8DB;
+    --md-sys-color-on-secondary: #253140;
+    --md-sys-color-secondary-container: #3B4858;
+    --md-sys-color-on-secondary-container: #D7E3F7;
+
+    --md-sys-color-tertiary: #D6BEE4;
+    --md-sys-color-on-tertiary: #3B2948;
+    --md-sys-color-tertiary-container: #523F5F;
+    --md-sys-color-on-tertiary-container: #F2DAFF;
+
+    --md-sys-color-background: #111318;
+    --md-sys-color-on-background: #E2E2E9;
+
+    --md-sys-color-surface: #111318;
+    --md-sys-color-on-surface: #E2E2E9;
+    --md-sys-color-surface-variant: #43474E;
+    --md-sys-color-on-surface-variant: #C3C7CF;
+    --md-sys-color-outline: #8D9199;
+    --md-sys-color-outline-variant: #43474E;
+
+    --md-sys-color-surface-container-low: #191C20;
+    --md-sys-color-surface-container: #1D2024;
+    --md-sys-color-surface-container-high: #282A2F;
 }
 
 body {
@@ -122,6 +154,7 @@ header {
     nav {
         display: flex;
         gap: 16px;
+        align-items: center;
 
         a {
             color: var(--md-sys-color-on-surface-variant);
@@ -129,12 +162,50 @@ header {
             font-weight: 500;
             padding: 8px 12px;
             border-radius: var(--md-sys-shape-corner-small);
+            display: flex;
+            align-items: center;
+            gap: 4px;
 
             &:hover {
                 background-color: var(--md-sys-color-secondary-container);
                 color: var(--md-sys-color-on-secondary-container);
                 text-decoration: none;
             }
+
+            &.resume-link {
+                background-color: var(--md-sys-color-primary-container);
+                color: var(--md-sys-color-on-primary-container);
+
+                &:hover {
+                    background-color: var(--md-sys-color-primary);
+                    color: var(--md-sys-color-on-primary);
+                }
+
+                .material-symbols-outlined {
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+
+    .theme-toggle {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 8px;
+        border-radius: var(--md-sys-shape-corner-small);
+        color: var(--md-sys-color-on-surface-variant);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.2s ease;
+
+        &:hover {
+            background-color: var(--md-sys-color-secondary-container);
+        }
+
+        .material-symbols-outlined {
+            font-size: 24px;
         }
     }
 }
