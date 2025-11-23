@@ -5,8 +5,9 @@ title: About
 
 
 ## About Me
-Backend Software Engineer with expertise in Golang, Python, Haskell, and C#. Experienced in building scalable systems, microservices, and cloud-native applications.
-Bengaluru, India | [ponannapuggera@gmail.com](mailto:ponannapuggera@gmail.com) | +91 8861312627
+I am a Backend Software Engineer with over 7 years of experience in building scalable systems, microservices, and cloud-native applications. My core expertise lies in **Golang**, **Python**, **Haskell**, and **C#**.
+
+Throughout my career, I have worked on diverse domains ranging from fintech to construction management. I have a proven track record of designing and implementing complex event-driven architectures, optimizing performance for high-throughput systems, and building secure, reliable APIs. I am passionate about writing clean, maintainable code and leveraging modern cloud technologies to solve real-world problems.
 
 ## Experience
 
@@ -62,3 +63,12 @@ CGPA: 8.59/10
 <li><strong>Languages:</strong> Golang, Python, Haskell, C#, Javascript, SQL, Bash</li>
 <li><strong>Technologies:</strong> Docker, MongoDB, gRPC, REST, GCP, AWS, Bigquery, Spanner, PostgreSQL, Temporal, Redis, Kubernetes</li>
 </ul>
+
+## Contact
+<div class="card" markdown="1">
+I am currently based in **Bengaluru, India**.
+
+- **Email**: [ponannapuggera@gmail.com](mailto:ponannapuggera@gmail.com)
+- **LinkedIn**: [puggeraponanna](https://www.linkedin.com/in/puggeraponanna/)
+- **GitHub**: [puggeraponanna](https://github.com/puggeraponanna)
+</div>

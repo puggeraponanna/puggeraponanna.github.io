@@ -1,34 +1,41 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "en" }}">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
-    <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
-    <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
-  </head>
-  <body>
-    <header>
-      <div class="container header-content">
-        <a class="site-title" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
-        <nav>
-            <!-- <a href="{{ "/" | relative_url }}">Home</a> -->
-            <!-- Add more links here if needed -->
-        </nav>
-      </div>
-    </header>
+<html lang="{{ page.lang | default: site.lang | default: " en" }}">
 
-    <main class="page-content" aria-label="Content">
-      <div class="container">
-        {{ content }}
-      </div>
-    </main>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
+  <meta name="description"
+    content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
+  <link rel="stylesheet" href="{{ " /assets/css/style.css" | relative_url }}">
+</head>
 
-    <footer>
-      <div class="container">
-        <p>&copy; {{ site.time | date: '%Y' }} {{ site.title | escape }}. All rights reserved.</p>
-      </div>
-    </footer>
-  </body>
+<body>
+  <header>
+    <div class="container header-content">
+      <a class="site-title" href="{{ " /" | relative_url }}">{{ site.title | escape }}</a>
+      <nav>
+        <a href="#about-me">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-content" aria-label="Content">
+    <div class="container">
+      {{ content }}
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; {{ site.time | date: '%Y' }} {{ site.title | escape }}. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+
 </html>
