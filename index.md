@@ -65,10 +65,32 @@ CGPA: 8.59/10
 </ul>
 
 ## Contact
-<div class="card" markdown="1">
-I am currently based in **Bengaluru, India**.
-
-- **Email**: [ponannapuggera@gmail.com](mailto:ponannapuggera@gmail.com)
-- **LinkedIn**: [puggeraponanna](https://www.linkedin.com/in/puggeraponanna/)
-- **GitHub**: [puggeraponanna](https://github.com/puggeraponanna)
+<div class="contact-section">
+  <p class="contact-intro">I am currently based in <strong>Bengaluru, India</strong>. Feel free to reach out!</p>
+  
+  <div class="contact-buttons">
+    <a href="mailto:ponannapuggera@gmail.com" class="contact-btn">
+      <span class="material-symbols-outlined">mail</span>
+      <span class="contact-btn-text">
+        <span class="contact-btn-label">Email</span>
+        <span class="contact-btn-value">ponannapuggera@gmail.com</span>
+      </span>
+    </a>
+    
+    <a href="https://www.linkedin.com/in/puggeraponanna/" target="_blank" rel="noopener noreferrer" class="contact-btn">
+      <span class="material-symbols-outlined">work</span>
+      <span class="contact-btn-text">
+        <span class="contact-btn-label">LinkedIn</span>
+        <span class="contact-btn-value">puggeraponanna</span>
+      </span>
+    </a>
+    
+    <a href="https://github.com/puggeraponanna" target="_blank" rel="noopener noreferrer" class="contact-btn">
+      <span class="material-symbols-outlined">code</span>
+      <span class="contact-btn-text">
+        <span class="contact-btn-label">GitHub</span>
+        <span class="contact-btn-value">puggeraponanna</span>
+      </span>
+    </a>
+  </div>
 </div>
