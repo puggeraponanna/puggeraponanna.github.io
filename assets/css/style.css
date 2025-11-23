@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+    --bg-color: #f3f4f6;
+    /* Light gray background */
+    --card-bg: #ffffff;
+    --text-color: #1f2937;
+    --text-secondary: #4b5563;
+    --primary-color: #4f46e5;
+    /* Indigo */
+    --primary-hover: #4338ca;
+    --accent-color: #e0e7ff;
+    --border-color: #e5e7eb;
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --font-family: 'Inter', sans-serif;
+    --max-width: 900px;
+    --radius: 0.75rem;
+}
+
+body {
+    font-family: var(--font-family);
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+
+    &:hover {
+        color: var(--primary-hover);
+        text-decoration: underline;
+    }
+}
+
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+header {
+    padding: 1.5rem 0;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(229, 231, 235, 0.5);
+    box-shadow: var(--shadow-sm);
+
+    .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .site-title {
+        font-weight: 800;
+        font-size: 1.5rem;
+        color: var(--text-color);
+        letter-spacing: -0.025em;
+        background: linear-gradient(135deg, var(--primary-color), #818cf8);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+        &:hover {
+            text-decoration: none;
+            opacity: 0.9;
+        }
+    }
+}
+
+/* Main Content */
+main {
+    padding: 3rem 0;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4 {
+    color: var(--text-color);
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    color: #111827;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--accent-color);
+    display: inline-block;
+}
+
+h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+p {
+    margin-bottom: 1.5rem;
+    color: var(--text-secondary);
+}
+
+ul {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+    color: var(--text-secondary);
+
+    li {
+        margin-bottom: 0.5rem;
+
+        &::marker {
+            color: var(--primary-color);
+        }
+    }
+}
+
+/* Cards */
+.card {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-color);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-lg);
+    }
+
+    h3 {
+        color: var(--primary-color);
+    }
+
+    em {
+        display: block;
+        color: #6b7280;
+        font-style: normal;
+        font-size: 0.95rem;
+        margin-bottom: 1rem;
+        font-weight: 500;
+    }
+}
+
+/* Skills Section */
+.skills-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+
+    li {
+        background: white;
+        padding: 0.5rem 1rem;
+        border-radius: 9999px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: var(--text-color);
+        box-shadow: var(--shadow-sm);
+        border: 1px solid var(--border-color);
+        margin: 0;
+
+        strong {
+            color: var(--primary-color);
+            margin-right: 0.25rem;
+        }
+    }
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 3rem 0;
+    color: #9ca3af;
+    font-size: 0.9rem;
+    margin-top: 4rem;
+}
