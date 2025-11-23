@@ -17,7 +17,18 @@
   <header>
     <div class="container header-content">
       <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title | escape }}</a>
-      <nav>
+      <div class="header-actions">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+          <span class="material-symbols-outlined theme-icon">dark_mode</span>
+        </button>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+      </div>
+      <nav id="main-nav">
+        <button class="menu-close" id="menu-close" aria-label="Close menu">
+          <span class="material-symbols-outlined">close</span>
+        </button>
         <a href="#about-me">About</a>
         <a href="#experience">Experience</a>
         <a href="#education">Education</a>
@@ -27,9 +38,6 @@
           <span class="material-symbols-outlined">download</span>
           Resume
         </a>
-        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
-          <span class="material-symbols-outlined theme-icon">dark_mode</span>
-        </button>
       </nav>
     </div>
   </header>
@@ -47,6 +55,30 @@
   </footer>
 
   <script>
+    // Menu toggle functionality
+    const menuToggle = document.getElementById('menu-toggle');
+    const menuClose = document.getElementById('menu-close');
+    const mainNav = document.getElementById('main-nav');
+
+    menuToggle.addEventListener('click', () => {
+      mainNav.classList.toggle('active');
+      const isActive = mainNav.classList.contains('active');
+      menuToggle.querySelector('.material-symbols-outlined').textContent = isActive ? 'close' : 'menu';
+    });
+
+    menuClose.addEventListener('click', () => {
+      mainNav.classList.remove('active');
+      menuToggle.querySelector('.material-symbols-outlined').textContent = 'menu';
+    });
+
+    // Close menu when clicking a nav link
+    mainNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mainNav.classList.remove('active');
+        menuToggle.querySelector('.material-symbols-outlined').textContent = 'menu';
+      });
+    });
+
     // Theme toggle functionality
     const themeToggle = document.getElementById('theme-toggle');
     const themeIcon = document.querySelector('.theme-icon');
