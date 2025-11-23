@@ -24,7 +24,7 @@ description: >-
   Backend Software Engineer with expertise in Golang, Python, Haskell, and C#.
   Experienced in building scalable systems, microservices, and cloud-native applications.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://puggeraponanna.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://www.ponanna.com" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: 
 github_username:  puggeraponanna
 linkedin_username: puggeraponanna
