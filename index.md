@@ -60,8 +60,8 @@ CGPA: 8.59/10
 
 ## Skills
 <ul class="skills-list">
-<li><strong>Languages:</strong> Golang, Python, Haskell, C#, Javascript, SQL, Bash</li>
-<li><strong>Technologies:</strong> Docker, MongoDB, gRPC, REST, GCP, AWS, Bigquery, Spanner, PostgreSQL, Temporal, Redis, Kubernetes</li>
+<li class="skill-languages"><strong>Languages:</strong> Golang, Python, Haskell, C#, Javascript, SQL, Bash</li>
+<li class="skill-technologies"><strong>Technologies:</strong> Docker, MongoDB, gRPC, REST, GCP, AWS, Bigquery, Spanner, PostgreSQL, Temporal, Redis, Kubernetes</li>
 </ul>
 
 ## Contact
