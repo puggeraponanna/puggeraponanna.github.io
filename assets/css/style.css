@@ -1,102 +1,114 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
 
 :root {
-    /* Material 3 Design Tokens - Key Color: Blue */
-    --md-sys-color-primary: #0061A4;
+    /* Coffee Estate Theme - Light Mode (Misty Plantation) */
+    --md-sys-color-primary: #2D5A27;
+    /* Forest Green */
     --md-sys-color-on-primary: #FFFFFF;
-    --md-sys-color-primary-container: #D1E4FF;
-    --md-sys-color-on-primary-container: #001D36;
+    --md-sys-color-primary-container: #E8F5E9;
+    /* Light Mint/Misty */
+    --md-sys-color-on-primary-container: #0A1D08;
 
-    --md-sys-color-secondary: #535F70;
+    --md-sys-color-secondary: #5D4037;
+    /* Soil Brown */
     --md-sys-color-on-secondary: #FFFFFF;
-    --md-sys-color-secondary-container: #D7E3F7;
-    --md-sys-color-on-secondary-container: #101C2B;
+    --md-sys-color-secondary-container: #EFEBE9;
+    --md-sys-color-on-secondary-container: #211512;
 
-    --md-sys-color-tertiary: #6B5778;
+    --md-sys-color-tertiary: #B71C1C;
+    /* Coffee Cherry Red */
     --md-sys-color-on-tertiary: #FFFFFF;
-    --md-sys-color-tertiary-container: #F2DAFF;
-    --md-sys-color-on-tertiary-container: #251431;
+    --md-sys-color-tertiary-container: #FFEBEE;
+    --md-sys-color-on-tertiary-container: #310001;
 
-    --md-sys-color-background: #F8F9FF;
-    --md-sys-color-on-background: #191C20;
+    --md-sys-color-background: #F7F9F6;
+    /* Misty Off-white */
+    --md-sys-color-on-background: #1A1C19;
 
-    --md-sys-color-surface: #F8F9FF;
-    --md-sys-color-on-surface: #191C20;
-    --md-sys-color-surface-variant: #DFE2EB;
-    --md-sys-color-on-surface-variant: #43474E;
-    --md-sys-color-outline: #73777F;
-    --md-sys-color-outline-variant: #C3C7CF;
+    --md-sys-color-surface: #F7F9F6;
+    --md-sys-color-on-surface: #1A1C19;
+    --md-sys-color-surface-variant: rgba(232, 239, 231, 0.7);
+    --md-sys-color-on-surface-variant: #424940;
+    --md-sys-color-outline: #72796F;
+    --md-sys-color-outline-variant: #C2C9BD;
 
     /* Surfaces */
-    --md-sys-color-surface-container-low: #F2F3FA;
-    --md-sys-color-surface-container: #ECEEF5;
-    --md-sys-color-surface-container-high: #E6E8EF;
+    --md-sys-color-surface-container-low: rgba(241, 248, 240, 0.6);
+    --md-sys-color-surface-container: rgba(235, 242, 234, 0.8);
+    --md-sys-color-surface-container-high: rgba(229, 236, 228, 0.9);
 
-    /* Elevation */
-    --md-sys-elevation-1: 0px 1px 2px 0px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
-    --md-sys-elevation-2: 0px 1px 2px 0px rgba(0, 0, 0, 0.3), 0px 2px 6px 2px rgba(0, 0, 0, 0.15);
-    --md-sys-elevation-3: 0px 4px 8px 3px rgba(0, 0, 0, 0.15), 0px 1px 3px 0px rgba(0, 0, 0, 0.3);
+    /* Elevation - Softer, modern shadows */
+    --md-sys-elevation-1: 0 4px 6px -1px rgba(10, 29, 8, 0.05), 0 2px 4px -1px rgba(10, 29, 8, 0.03);
+    --md-sys-elevation-2: 0 10px 15px -3px rgba(10, 29, 8, 0.08), 0 4px 6px -2px rgba(10, 29, 8, 0.05);
+    --md-sys-elevation-3: 0 20px 25px -5px rgba(10, 29, 8, 0.1), 0 10px 10px -5px rgba(10, 29, 8, 0.04);
 
     /* Shape */
-    --md-sys-shape-corner-small: 8px;
-    --md-sys-shape-corner-medium: 12px;
-    --md-sys-shape-corner-large: 16px;
-    --md-sys-shape-corner-extra-large: 28px;
+    --md-sys-shape-corner-small: 12px;
+    --md-sys-shape-corner-medium: 16px;
+    --md-sys-shape-corner-large: 24px;
+    --md-sys-shape-corner-extra-large: 32px;
 
     /* Typography */
-    --md-sys-typescale-display-large: 57px;
-    --md-sys-typescale-headline-large: 32px;
-    --md-sys-typescale-headline-medium: 28px;
-    --md-sys-typescale-title-large: 22px;
-    --md-sys-typescale-body-large: 16px;
-    --md-sys-typescale-label-large: 14px;
+    --md-sys-typescale-display-large: 64px;
+    --md-sys-typescale-headline-large: 40px;
+    --md-sys-typescale-headline-medium: 32px;
+    --md-sys-typescale-title-large: 24px;
+    --md-sys-typescale-body-large: 18px;
+    --md-sys-typescale-label-large: 16px;
 
-    --font-family: 'Roboto', sans-serif;
-    --max-width: 900px;
+    --font-family-body: 'Inter', sans-serif;
+    --font-family-heading: 'Outfit', sans-serif;
+    --max-width: 1000px;
+    --glass-blur: 12px;
 }
 
-/* Dark Mode */
+/* Coffee Estate - Dark Mode (Obsidian Forest) */
 [data-theme="dark"] {
-    --md-sys-color-primary: #9ECAFF;
-    --md-sys-color-on-primary: #003258;
-    --md-sys-color-primary-container: #00497D;
-    --md-sys-color-on-primary-container: #D1E4FF;
+    --md-sys-color-primary: #81C784;
+    /* Sage Green */
+    --md-sys-color-on-primary: #00390A;
+    --md-sys-color-primary-container: rgba(45, 90, 39, 0.4);
+    --md-sys-color-on-primary-container: #C8E6C9;
 
-    --md-sys-color-secondary: #BAC8DB;
-    --md-sys-color-on-secondary: #253140;
-    --md-sys-color-secondary-container: #3B4858;
-    --md-sys-color-on-secondary-container: #D7E3F7;
+    --md-sys-color-secondary: #A1887F;
+    /* Earthy Clay */
+    --md-sys-color-on-secondary: #3E2723;
+    --md-sys-color-secondary-container: rgba(78, 52, 46, 0.3);
+    --md-sys-color-on-secondary-container: #D7CCC8;
 
-    --md-sys-color-tertiary: #D6BEE4;
-    --md-sys-color-on-tertiary: #3B2948;
-    --md-sys-color-tertiary-container: #523F5F;
-    --md-sys-color-on-tertiary-container: #F2DAFF;
+    --md-sys-color-tertiary: #E57373;
+    /* Muted Cherry Red */
+    --md-sys-color-on-tertiary: #4B0000;
+    --md-sys-color-tertiary-container: rgba(183, 28, 28, 0.2);
+    --md-sys-color-on-tertiary-container: #FFCDD2;
 
-    --md-sys-color-background: #111318;
-    --md-sys-color-on-background: #E2E2E9;
+    --md-sys-color-background: #0A0F0A;
+    /* Very deep obsidian green */
+    --md-sys-color-on-background: #E1E3DF;
 
-    --md-sys-color-surface: #111318;
-    --md-sys-color-on-surface: #E2E2E9;
-    --md-sys-color-surface-variant: #43474E;
-    --md-sys-color-on-surface-variant: #C3C7CF;
-    --md-sys-color-outline: #8D9199;
-    --md-sys-color-outline-variant: #43474E;
+    --md-sys-color-surface: #0A0F0A;
+    --md-sys-color-on-surface: #E1E3DF;
+    --md-sys-color-surface-variant: rgba(66, 73, 64, 0.4);
+    --md-sys-color-on-surface-variant: #C2C9BD;
+    --md-sys-color-outline: #8C9388;
+    --md-sys-color-outline-variant: #424940;
 
-    --md-sys-color-surface-container-low: #191C20;
-    --md-sys-color-surface-container: #1D2024;
-    --md-sys-color-surface-container-high: #282A2F;
+    --md-sys-color-surface-container-low: rgba(22, 27, 22, 0.4);
+    --md-sys-color-surface-container: rgba(28, 33, 28, 0.6);
+    --md-sys-color-surface-container-high: rgba(38, 43, 38, 0.8);
 }
 
 body {
-    font-family: var(--font-family);
+    font-family: var(--font-family-body);
     font-size: var(--md-sys-typescale-body-large);
     color: var(--md-sys-color-on-background);
     background-color: var(--md-sys-color-background);
-    background-image: radial-gradient(circle, var(--md-sys-color-outline-variant) 1px, transparent 1px);
-    background-size: 24px 24px;
-    line-height: 1.6;
+    background-image: radial-gradient(circle, var(--md-sys-color-outline-variant) 0.8px, transparent 0.8px);
+    background-size: 64px 64px;
+    line-height: 1.8;
     margin: 0;
     padding: 0;
+    -webkit-font-smoothing: antialiased;
 }
 
 a {
@@ -124,35 +136,41 @@ a {
 
 /* Header - Top App Bar style */
 header {
-    padding: 16px 0;
+    padding: 20px 0;
     background-color: var(--md-sys-color-surface-container);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
     color: var(--md-sys-color-on-surface);
     position: sticky;
-    top: 0;
+    top: 20px;
     z-index: 100;
     box-shadow: var(--md-sys-elevation-2);
-    margin-bottom: 24px;
-    border-bottom-left-radius: var(--md-sys-shape-corner-extra-large);
-    border-bottom-right-radius: var(--md-sys-shape-corner-extra-large);
+    margin: 0 24px 48px;
+    border-radius: var(--md-sys-shape-corner-extra-large);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 
     .header-content {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        padding: 0 32px;
     }
 
     .site-title {
+        font-family: var(--font-family-heading);
         font-weight: 700;
         font-size: var(--md-sys-typescale-headline-medium);
-        background: linear-gradient(135deg, var(--md-sys-color-primary), var(--md-sys-color-tertiary));
+        background: linear-gradient(135deg, var(--md-sys-color-primary), var(--md-sys-color-secondary));
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
-        letter-spacing: 0;
+        letter-spacing: -0.5px;
         padding: 0;
+        transition: transform 0.3s ease;
 
         &:hover {
-            opacity: 0.8;
+            transform: scale(1.02);
+            opacity: 1;
         }
     }
 
@@ -257,41 +275,39 @@ h1,
 h2,
 h3,
 h4 {
+    font-family: var(--font-family-heading);
     color: var(--md-sys-color-on-surface);
     margin-top: 0;
+    letter-spacing: -0.02em;
 }
 
 h1 {
     font-size: var(--md-sys-typescale-display-large);
-    font-weight: 400;
-    line-height: 64px;
-    margin-bottom: 24px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 32px;
     color: var(--md-sys-color-on-surface);
 }
 
 h2 {
     font-size: var(--md-sys-typescale-headline-large);
-    font-weight: 400;
-    margin-top: 48px;
-    margin-bottom: 24px;
-    background: linear-gradient(135deg, var(--md-sys-color-primary), var(--md-sys-color-tertiary));
+    font-weight: 600;
+    margin-top: 64px;
+    margin-bottom: 32px;
+    background: linear-gradient(135deg, var(--md-sys-color-primary), var(--md-sys-color-secondary));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     border-bottom: none;
-    display: block;
-    position: relative;
-    padding-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
 
     &::after {
         content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 60px;
-        height: 3px;
-        background: linear-gradient(90deg, var(--md-sys-color-primary), var(--md-sys-color-tertiary));
-        border-radius: 2px;
+        flex: 1;
+        height: 1px;
+        background: linear-gradient(90deg, var(--md-sys-color-outline-variant), transparent);
     }
 }
 
@@ -324,50 +340,42 @@ ul {
 /* Cards - Elevated Card */
 .card {
     background-color: var(--md-sys-color-surface-container-low);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
     border-radius: var(--md-sys-shape-corner-extra-large);
-    padding: 24px;
-    margin-bottom: 24px;
+    padding: 40px;
+    margin-bottom: 32px;
     box-shadow: var(--md-sys-elevation-1);
     position: relative;
     overflow: hidden;
-    transition: all 0.3s cubic-bezier(0.2, 0.0, 0, 1.0);
-
-    &::before {
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 0;
-        bottom: 0;
-        width: 4px;
-        background: linear-gradient(180deg, var(--md-sys-color-primary), var(--md-sys-color-tertiary));
-        border-top-left-radius: var(--md-sys-shape-corner-extra-large);
-        border-bottom-left-radius: var(--md-sys-shape-corner-extra-large);
-        transition: background 0.3s cubic-bezier(0.2, 0.0, 0, 1.0);
-    }
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    border: 1px solid rgba(255, 255, 255, 0.05);
 
     &:hover {
-        transform: translateY(-4px);
+        transform: translateY(-8px) scale(1.01);
         box-shadow: var(--md-sys-elevation-3);
-        background-color: var(--md-sys-color-surface-container);
-
-        &::before {
-            background: linear-gradient(180deg, var(--md-sys-color-tertiary), var(--md-sys-color-primary));
-        }
+        background-color: var(--md-sys-color-surface-container-high);
+        border-color: var(--md-sys-color-primary);
     }
 
     h3 {
         color: var(--md-sys-color-primary);
+        font-weight: 600;
+        margin-bottom: 12px;
     }
 
     em {
-        display: block;
-        color: var(--md-sys-color-secondary);
+        display: inline-block;
+        color: var(--md-sys-color-on-surface-variant);
+        background-color: var(--md-sys-color-primary-container);
+        padding: 4px 12px;
+        border-radius: 100px;
         font-style: normal;
-        font-size: var(--md-sys-typescale-label-large);
-        margin-bottom: 16px;
-        font-weight: 500;
+        font-size: 12px;
+        margin-bottom: 24px;
+        font-weight: 600;
         text-transform: uppercase;
-        letter-spacing: 0.5px;
+        letter-spacing: 1px;
     }
 }
 
@@ -403,23 +411,46 @@ ul {
         }
 
         &.skill-languages {
-            background: linear-gradient(135deg, #E3F2FD, #BBDEFB);
-            color: #0D47A1;
-            border-color: #2196F3;
+            background: linear-gradient(135deg, #C8E6C9, #A5D6A7);
+            color: #1B5E20;
+            border-color: #2E7D32;
 
             strong {
-                color: #1565C0;
+                color: #004D40;
             }
         }
 
         &.skill-technologies {
-            background: linear-gradient(135deg, #E0F2F1, #B2DFDB);
-            color: #004D40;
-            border-color: #009688;
+            background: linear-gradient(135deg, #EFEBE9, #D7CCC8);
+            color: #4E342E;
+            border-color: #8D6E63;
 
             strong {
-                color: #00695C;
+                color: #3E2723;
             }
+        }
+    }
+}
+
+/* Dark Mode Skill Chip Overrides */
+[data-theme="dark"] .skills-list li {
+    &.skill-languages {
+        background: linear-gradient(135deg, rgba(46, 125, 50, 0.3), rgba(27, 94, 32, 0.4));
+        color: #C8E6C9;
+        border-color: rgba(129, 199, 132, 0.3);
+
+        strong {
+            color: #A5D6A7;
+        }
+    }
+
+    &.skill-technologies {
+        background: linear-gradient(135deg, rgba(93, 64, 55, 0.3), rgba(62, 39, 35, 0.4));
+        color: #D7CCC8;
+        border-color: rgba(161, 136, 127, 0.3);
+
+        strong {
+            color: #BCAAA4;
         }
     }
 }
@@ -465,7 +496,7 @@ ul {
     .material-symbols-outlined {
         font-size: 32px;
         color: var(--md-sys-color-on-primary);
-        background: linear-gradient(135deg, var(--md-sys-color-primary), var(--md-sys-color-tertiary));
+        background: linear-gradient(135deg, var(--md-sys-color-primary), #4CAF50);
         padding: 12px;
         border-radius: var(--md-sys-shape-corner-medium);
     }

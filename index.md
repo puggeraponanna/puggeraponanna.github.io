@@ -5,48 +5,53 @@ title: About
 
 
 ## About Me
-I am a Backend Software Engineer with over 7 years of experience in building scalable systems, microservices, and cloud-native applications. My core expertise lies in **Golang**, **Python**, **Haskell**, and **C#**.
+I am a **Backend Software Engineer with over 7 years of experience** specializing in building high-performance, event-driven systems and scalable microservices. My core expertise includes **Golang, Python, Haskell, and C#**, with a strong focus on cloud-native architectures (GCP/AWS).
 
-Throughout my career, I have worked on diverse domains ranging from fintech to construction management. I have a proven track record of designing and implementing complex event-driven architectures, optimizing performance for high-throughput systems, and building secure, reliable APIs. I am passionate about writing clean, maintainable code and leveraging modern cloud technologies to solve real-world problems.
+Throughout my career, I've architected complex data pipelines, engineered secure financial integration layers, and optimized distributed systems for high-throughput environments. I am passionate about writing clean, maintainable code and leveraging modern observability and orchestration tools like **Temporal, dbt, and Prometheus** to build resilient data products and services.
 
 ## Experience
 
 <div class="card" markdown="1">
-### ANZx - Software Engineer (Backend - Golang)
+### ANZ - Software Engineer (Backend - Golang, Python)
 *Feb 2024 – Present*
-- Designed and implemented an event broker system using temporal workflows, that runs on a schedule to fetch data from AWS Kinesis, process it and store it in bigquery to be used for analytics and other dependent systems.
-- Built a validation system that runs on Cloudrun to execute jupyter notebooks to validate the loan outcomes after credit decisioning is complete.
-- Built a loan simulation tool to submit different types of loans to the credit decision system in order to run validations on the credit decision rulesets and also generate data for analytics.
-- Setup GHA workflows to automate different tasks like dependency management using renovate, automated releases to GCP, running automated pre-deployment tests etc.
-- Worked on building new APIs using gRPC and enhancing the existing features of the credit decision system.
+- Architected event-driven data pipeline in Go on Cloud Run (Terraform IaC) that decouples systems via Pub/Sub events, parsing and loading into BigQuery to enable async processing, analytics, and data product consumption across teams.
+- Built scalable data products using dbt transformations on BigQuery, delivering standardized datasets that accelerated reporting and experimentation for multiple consumption teams.
+- Engineered CI/CD pipelines with GitHub Actions, automating deployments and proof-gathering to cut release turnaround time and boost deployment reliability.
+- Rewrote legacy Java loan simulation tool in Go, enhancing maintainability and enabling rapid validation of credit decision rulesets for analytics generation.
+- Implemented Cloud Run-based validation system using Jupyter Notebooks to verify post-credit-decision loan outcomes, ensuring data integrity across pipelines.
+- Developed gRPC APIs and extended credit decisioning system features, supporting new lending scenarios with improved security and performance.
+- Integrated observability stack with Prometheus, Grafana, and Jaeger/OpenTelemetry to monitor distributed workflows and optimize system reliability.
 </div>
 
 <div class="card" markdown="1">
-### Sequoia - Software Development Engineer (Backend - Golang)
+### Sequoia - Backend Engineer (Backend - Golang, Python, Node)
 *Dec 2021 – Feb 2024*
-- Built the client side encryption framework for storing files on Amazon S3 and a mechanism to access them using one time links, and also built a tool to handle migration of existing files.
-- Developed a common logging library which improved traceability of requests across different services using opensearch.
-- Built a caching library using redis that works with mongodb to make data reads faster.
-- Built a custom worker pool mechanism using goroutines to process parallel jobs which improved the speed of document generation.
-- Built a reverse proxy service equipped with a rate limiter that can be configured based on custom rules to manage the security of publicly accessible APIs.
+- Architected and implemented full-stack backend for employment offer management system in Go and MongoDB, orchestrating end-to-end lifecycle from offer creation through digital acceptance.
+- Engineered Redis-MongoDB hybrid caching layer, reducing query latency and database load while maintaining data consistency across distributed microservices.
+- Designed state machine-based workflow engine with event-driven callbacks, enabling complex multi-stage offer approval processes with automated notifications.
+- Established comprehensive unit testing framework with CI integration, improving code coverage and enabling rapid feature iteration with confidence.
+- Built production-grade client-side encryption system for S3 document storage with secure one-time access links, including zero-downtime migration tooling for existing files.
+- Implemented high-performance goroutine worker pool with dynamic scaling and graceful shutdown, improving document generation throughput by 3x while preventing resource exhaustion.
+- Designed and deployed reverse proxy gateway with configurable rate limiting, custom rule engine, and DDoS protection, securing public-facing APIs.
 </div>
 
 <div class="card" markdown="1">
 ### Juspay - Software Development Engineer (Backend - Haskell)
 *Jun 2021 - Dec 2021*
-- Worked on building a loan service provider product based on the OCEN(Open Credit Enablement Network) standards.
-- Designed and built the lending service that integrates with loan service provider, account aggregators and credit bureaus to fetch the details of the borrower.
-- Built the business rule engine that makes credit decisions on the borrower data based on rules set by the lenders.
-- Worked on revamping the user onboarding experience for the loan application which increased the onboarding rate of customers.
+- Architected OCEN-compliant loan origination system in Haskell, orchestrating integrations across loan service providers, account aggregators, and credit bureaus for real-time borrower assessment.
+- Built a flexible business rule engine with configurable decision trees, enabling lenders to define custom credit policies while maintaining regulatory compliance and audit trails.
+- Engineered event-driven workflow system using Redis Streams for asynchronous loan processing, ensuring OCEN protocol compliance.
+- Re-engineered loan application onboarding flow with progressive disclosure and intelligent form validation, achieving improvements in completion rate (27% to 91%).
+- Contributed to engineering team growth as technical interviewer and hackathon organizer, helping scale the credit platform team during rapid product expansion.
 </div>
 
 <div class="card" markdown="1">
-### Aurigo Software Technologies - Senior Software Engineer (Backend - C#)
+### Aurigo - Senior Software Engineer (Backend - C#)
 *Jun 2017 - May 2021*
-- Built the Bid Management module for Aurigo Masterworks to automate the online bidding process.
-- Integrated Masterworks with the Oracle finance management system to enable seamless flow of financial transaction data between the two systems.
-- Built a windows service based scheduling system to automate the sending and retrieval of data for integration.
-- Improved the performance of existing SSRS reports and dashboards in Masterworks by optimizing SQL queries.
+- Engineered end-to-end Bid Management System automating procurement workflows for state contracts, including online bidding, vendor management, and automated award processing.
+- Designed FMIS integration layer using XML-based data exchange, enabling real-time financial data synchronization between Masterworks and legacy finance systems.
+- Developed Windows service based job scheduler with retry logic and error handling, automating bidirectional data integration flows with external systems.
+- Enhanced unit price search with advanced filtering and caching, reducing contractor search time and improving bid preparation efficiency for department staff.
 </div>
 
 ## Education
@@ -61,7 +66,11 @@ CGPA: 8.59/10
 ## Skills
 <ul class="skills-list">
 <li class="skill-languages"><strong>Languages:</strong> Golang, Python, Haskell, C#, Javascript, SQL, Bash</li>
-<li class="skill-technologies"><strong>Technologies:</strong> Docker, MongoDB, gRPC, REST, GCP, AWS, Bigquery, Spanner, PostgreSQL, Temporal, Redis, Kubernetes</li>
+<li class="skill-technologies"><strong>Frameworks:</strong> Gin, FastAPI, Flask, Node, .NET</li>
+<li class="skill-technologies"><strong>Cloud & Infra:</strong> GCP, AWS, Cloud Run, Terraform, Kubernetes, Docker, Pub/Sub, Kinesis</li>
+<li class="skill-languages"><strong>Databases:</strong> BigQuery, Spanner, PostgreSQL, MySQL, MongoDB, Redis, DynamoDB</li>
+<li class="skill-technologies"><strong>Observability:</strong> Prometheus, Grafana, Datadog, Jaeger, OpenTelemetry, Elasticsearch</li>
+<li class="skill-languages"><strong>APIs & Data:</strong> gRPC, REST, Protobuf, WebSockets, Apache Beam, dbt, Temporal</li>
 </ul>
 
 ## Contact
