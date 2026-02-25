@@ -337,7 +337,13 @@
         requestAnimationFrame(animate);
       }
 
-      window.addEventListener('resize', init);
+      let prevWidth = window.innerWidth;
+      window.addEventListener('resize', () => {
+        if (window.innerWidth !== prevWidth) {
+          prevWidth = window.innerWidth;
+          init();
+        }
+      });
       let lastTouchTime = 0;
       const resetMouse = () => {
         mouse.x = -1000;
