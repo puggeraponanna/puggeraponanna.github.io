@@ -1,0 +1,91 @@
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes glowPulse {
+    0% {
+        box-shadow: 0 0 5px rgba(0, 242, 255, 0.2);
+    }
+
+    50% {
+        box-shadow: 0 0 20px rgba(0, 242, 255, 0.4);
+    }
+
+    100% {
+        box-shadow: 0 0 5px rgba(0, 242, 255, 0.2);
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.reveal {
+    animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.float-animation {
+    animation: float 4s ease-in-out infinite;
+}
+
+.magnetic-hover {
+    transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.magnetic-hover:hover {
+    transform: scale(1.05);
+}
+
+@keyframes floatBlob {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    33% {
+        transform: translate(10vw, 20vh) scale(1.2);
+    }
+
+    66% {
+        transform: translate(-5vw, 15vh) scale(0.8);
+    }
+
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+}
+
+@keyframes floatBlobReverse {
+    0% {
+        transform: translate(0, 0) scale(1.1);
+    }
+
+    33% {
+        transform: translate(-10vw, -20vh) scale(0.9);
+    }
+
+    66% {
+        transform: translate(10vw, -10vh) scale(1.1);
+    }
+
+    100% {
+        transform: translate(0, 0) scale(1.1);
+    }
+}

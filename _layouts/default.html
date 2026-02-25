@@ -7,8 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Primary Meta Tags -->
-  <title>{{ site.title | escape }} - Backend Software Engineer</title>
-  <meta name="title" content="{{ site.title | escape }} - Backend Software Engineer">
+  <title>{{ site.title | escape }} - {{ site.job_title }}</title>
+  <meta name="title" content="{{ site.title | escape }} - {{ site.job_title }}">
   <meta name="description"
     content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
   <meta name="keywords"
@@ -19,14 +19,14 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="{{ page.url | absolute_url }}">
-  <meta property="og:title" content="{{ site.title | escape }} - Backend Software Engineer">
+  <meta property="og:title" content="{{ site.title | escape }} - {{ site.job_title }}">
   <meta property="og:description" content="{{ site.description | strip_html | normalize_whitespace | escape }}">
   <meta property="og:site_name" content="{{ site.title | escape }}">
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary">
   <meta property="twitter:url" content="{{ page.url | absolute_url }}">
-  <meta property="twitter:title" content="{{ site.title | escape }} - Backend Software Engineer">
+  <meta property="twitter:title" content="{{ site.title | escape }} - {{ site.job_title }}">
   <meta property="twitter:description" content="{{ site.description | strip_html | normalize_whitespace | escape }}">
 
   <!-- Canonical URL -->
@@ -47,7 +47,7 @@
     "name": "{{ site.title | escape }}",
     "url": "{{ site.url }}",
     "email": "{{ site.email }}",
-    "jobTitle": "Backend Software Engineer",
+    "jobTitle": "{{ site.job_title }}",
     "description": "{{ site.description | strip_html | normalize_whitespace | escape }}",
     "address": {
       "@type": "PostalAddress",
@@ -68,33 +68,7 @@
 </head>
 
 <body>
-  <header>
-    <div class="container header-content">
-      <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title | escape }}</a>
-      <div class="header-actions">
-        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
-          <span class="material-symbols-outlined theme-icon">dark_mode</span>
-        </button>
-        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
-          <span class="material-symbols-outlined">menu</span>
-        </button>
-      </div>
-      <nav id="main-nav">
-        <button class="menu-close" id="menu-close" aria-label="Close menu">
-          <span class="material-symbols-outlined">close</span>
-        </button>
-        <a href="#about-me">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#education">Education</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
-        <a href="{{ '/assets/PonannaResume.pdf' | relative_url }}" download class="resume-link">
-          <span class="material-symbols-outlined">download</span>
-          Resume
-        </a>
-      </nav>
-    </div>
-  </header>
+  {% include header.html %}
 
   <main class="page-content" aria-label="Content">
     <div class="container">
@@ -102,35 +76,25 @@
     </div>
   </main>
 
-  <footer>
-    <div class="container">
-      <p>&copy; {{ site.time | date: '%Y' }} {{ site.title | escape }}. All rights reserved.</p>
-    </div>
-  </footer>
+  {% include footer.html %}
+
+  <canvas id="background-canvas"></canvas>
 
   <script>
-    // Menu toggle functionality
-    const menuToggle = document.getElementById('menu-toggle');
-    const menuClose = document.getElementById('menu-close');
-    const mainNav = document.getElementById('main-nav');
+    // Header scroll effect with hysteresis buffer to prevent jitter
+    const header = document.querySelector('header');
+    let isScrolled = false;
 
-    menuToggle.addEventListener('click', () => {
-      mainNav.classList.toggle('active');
-      const isActive = mainNav.classList.contains('active');
-      menuToggle.querySelector('.material-symbols-outlined').textContent = isActive ? 'close' : 'menu';
-    });
+    window.addEventListener('scroll', () => {
+      const scrollPos = window.scrollY;
 
-    menuClose.addEventListener('click', () => {
-      mainNav.classList.remove('active');
-      menuToggle.querySelector('.material-symbols-outlined').textContent = 'menu';
-    });
-
-    // Close menu when clicking a nav link
-    mainNav.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        mainNav.classList.remove('active');
-        menuToggle.querySelector('.material-symbols-outlined').textContent = 'menu';
-      });
+      if (!isScrolled && scrollPos > 80) {
+        header.classList.add('scrolled');
+        isScrolled = true;
+      } else if (isScrolled && scrollPos < 20) {
+        header.classList.remove('scrolled');
+        isScrolled = false;
+      }
     });
 
     // Theme toggle functionality
@@ -138,7 +102,6 @@
     const themeIcon = document.querySelector('.theme-icon');
     const html = document.documentElement;
 
-    // Check for saved theme preference or default to light mode
     const currentTheme = localStorage.getItem('theme') || 'light';
     html.setAttribute('data-theme', currentTheme);
     updateIcon(currentTheme);
@@ -150,11 +113,248 @@
       html.setAttribute('data-theme', newTheme);
       localStorage.setItem('theme', newTheme);
       updateIcon(newTheme);
+      if (window.initFluid) window.initFluid(); // Re-init colors on theme change
     });
 
     function updateIcon(theme) {
       themeIcon.textContent = theme === 'light' ? 'dark_mode' : 'light_mode';
     }
+
+    /* 
+      Interactive Bubble System (Neon Glass Aesthetic)
+      Buoyant, glassy bubbles that react to mouse movement and CO-COLLIDE.
+    */
+    (function () {
+      const canvas = document.getElementById('background-canvas');
+      if (!canvas) return;
+
+      const ctx = canvas.getContext('2d');
+      let width, height, bubbles = [];
+      const mouse = { x: -1000, y: -1000 };
+
+      const config = {
+        bubbleCount: 50, // Reduced for better collision performance
+        minRadius: 10,
+        maxRadius: 45,
+        mouseRadius: 200,
+        pushForce: 0.2,
+        driftSpeed: 0.3,
+        colors: {
+          light: [
+            'rgba(88, 101, 242, 0.4)',  // Saturated Blurple
+            'rgba(255, 64, 129, 0.4)',  // Vibrant Pink
+            'rgba(0, 230, 118, 0.4)',   // Bright Lime
+            'rgba(0, 184, 212, 0.4)',   // Cyan
+            'rgba(255, 171, 0, 0.4)',   // Amber/Orange
+            'rgba(213, 0, 249, 0.4)'    // Purple
+          ],
+          dark: [
+            'rgba(129, 140, 248, 0.35)',
+            'rgba(244, 114, 182, 0.35)',
+            'rgba(52, 211, 153, 0.35)',
+            'rgba(45, 212, 191, 0.35)',
+            'rgba(251, 191, 36, 0.35)',
+            'rgba(167, 139, 250, 0.35)'
+          ]
+        }
+      };
+
+      class Bubble {
+        constructor() {
+          this.init(true);
+        }
+
+        init(initial = false) {
+          this.radius = Math.random() * (config.maxRadius - config.minRadius) + config.minRadius;
+          this.x = Math.random() * width;
+          this.y = initial ? Math.random() * height : height + this.radius + Math.random() * 200;
+          this.vx = (Math.random() - 0.5) * 0.5;
+          this.vy = -Math.random() * config.driftSpeed - 0.1;
+          this.colorIndex = Math.floor(Math.random() * config.colors.light.length);
+
+          // Avoid overlap on init (simple retry)
+          if (initial) {
+            for (let i = 0; i < 10; i++) { // Limit retries
+              let overlap = false;
+              for (const other of bubbles) {
+                const dist = Math.hypot(this.x - other.x, this.y - other.y);
+                if (dist < this.radius + other.radius) {
+                  overlap = true;
+                  break;
+                }
+              }
+              if (!overlap) break;
+              this.x = Math.random() * width;
+              this.y = Math.random() * height;
+            }
+          }
+        }
+
+        update() {
+          // Buoyant drift
+          this.x += this.vx;
+          this.y += this.vy;
+
+          // Mouse interaction (Push away)
+          const dx = this.x - mouse.x;
+          const dy = this.y - mouse.y;
+          const dist = Math.hypot(dx, dy);
+
+          if (dist < config.mouseRadius) {
+            const force = (config.mouseRadius - dist) / config.mouseRadius;
+            this.vx += (dx / dist) * force * config.pushForce;
+            this.vy += (dy / dist) * force * config.pushForce;
+          }
+
+          // Friction
+          this.vx *= 0.98;
+          if (this.vy > -config.driftSpeed) this.vy -= 0.01;
+
+          // Screen wrap-ish reset
+          if (this.y < -this.radius) {
+            this.y = height + this.radius;
+            this.x = Math.random() * width;
+          }
+          if (this.x < -this.radius) this.x = width + this.radius;
+          if (this.x > width + this.radius) this.x = -this.radius;
+        }
+
+        resolveCollisions() {
+          bubbles.forEach(other => {
+            if (this === other) return;
+            const dx = other.x - this.x;
+            const dy = other.y - this.y;
+            const distance = Math.hypot(dx, dy);
+            const minDistance = this.radius + other.radius;
+
+            if (distance < minDistance) {
+              // Resolve overlap
+              const overlap = minDistance - distance;
+              const nx = dx / distance; // Normal X
+              const ny = dy / distance; // Normal Y
+
+              const moveX = nx * overlap * 0.5;
+              const moveY = ny * overlap * 0.5;
+
+              this.x -= moveX;
+              this.y -= moveY;
+              other.x += moveX;
+              other.y += moveY;
+
+              // Elastic impulse (Simple bounce)
+              const relativeVelocityX = this.vx - other.vx;
+              const relativeVelocityY = this.vy - other.vy;
+              const velocityAlongNormal = relativeVelocityX * nx + relativeVelocityY * ny;
+
+              if (velocityAlongNormal > 0) return; // Already moving apart
+
+              const restitution = 0.5;
+              const impulse = (1 + restitution) * velocityAlongNormal;
+
+              this.vx -= impulse * nx * 0.5;
+              this.vy -= impulse * ny * 0.5;
+              other.vx += impulse * nx * 0.5;
+              other.vy += impulse * ny * 0.5;
+            }
+          });
+        }
+
+        draw() {
+          const theme = document.documentElement.getAttribute('data-theme');
+          const color = theme === 'dark' ? config.colors.dark[this.colorIndex] : config.colors.light[this.colorIndex];
+
+          ctx.save();
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+
+          // Neon Glow Effect
+          ctx.shadowBlur = 15;
+          ctx.shadowColor = color;
+
+          ctx.strokeStyle = color;
+          ctx.lineWidth = 2; // Slightly thicker for more color
+          ctx.stroke();
+
+          // Reset shadow for internal fill to maintain glass look
+          ctx.shadowBlur = 0;
+
+          // Glassy internal volume
+          const grad = ctx.createRadialGradient(
+            this.x - this.radius * 0.3,
+            this.y - this.radius * 0.3,
+            0,
+            this.x,
+            this.y,
+            this.radius
+          );
+
+          if (theme === 'dark') {
+            grad.addColorStop(0, 'rgba(255, 255, 255, 0.05)');
+            grad.addColorStop(1, 'transparent');
+          } else {
+            // Light mode: use a very subtle hint of white/color to avoid washing out cards
+            grad.addColorStop(0, 'rgba(255, 255, 255, 0.1)');
+            grad.addColorStop(1, 'transparent');
+          }
+
+          ctx.fillStyle = grad;
+          ctx.fill();
+          ctx.restore();
+        }
+      }
+
+      function init() {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+        bubbles = [];
+        for (let i = 0; i < config.bubbleCount; i++) {
+          bubbles.push(new Bubble());
+        }
+      }
+
+      function animate() {
+        ctx.clearRect(0, 0, width, height);
+
+        bubbles.forEach(bubble => {
+          bubble.update();
+          bubble.resolveCollisions();
+        });
+
+        bubbles.forEach(bubble => {
+          bubble.draw();
+        });
+
+        requestAnimationFrame(animate);
+      }
+
+      window.addEventListener('resize', init);
+      window.addEventListener('mousemove', e => {
+        mouse.x = e.clientX;
+        mouse.y = e.clientY;
+      });
+
+      init();
+      animate();
+      window.initFluid = () => { init(); }; // Compatibility with toggle
+    })();
+
+    // Reveal animations on scroll
+    const observerOptions = {
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('reveal');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('h2, .card, .skills-list li').forEach(el => {
+      observer.observe(el);
+    });
   </script>
 </body>
 
