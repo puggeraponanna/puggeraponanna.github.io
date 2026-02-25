@@ -306,6 +306,16 @@
       function init() {
         width = canvas.width = window.innerWidth;
         height = canvas.height = window.innerHeight;
+
+        // Responsive adjustments
+        if (width < 768) {
+          config.bubbleCount = 15;
+          config.maxRadius = 30;
+        } else {
+          config.bubbleCount = 50;
+          config.maxRadius = 45;
+        }
+
         bubbles = [];
         for (let i = 0; i < config.bubbleCount; i++) {
           bubbles.push(new Bubble());
@@ -328,10 +338,39 @@
       }
 
       window.addEventListener('resize', init);
+      let lastTouchTime = 0;
+      const resetMouse = () => {
+        mouse.x = -1000;
+        mouse.y = -1000;
+      };
+
       window.addEventListener('mousemove', e => {
+        if (Date.now() - lastTouchTime < 500) return; // Ignore simulated mouse events
         mouse.x = e.clientX;
         mouse.y = e.clientY;
       });
+
+      window.addEventListener('mouseleave', resetMouse);
+
+      // Mobile Touch Interaction
+      window.addEventListener('touchstart', e => {
+        lastTouchTime = Date.now();
+        if (e.touches.length > 0) {
+          mouse.x = e.touches[0].clientX;
+          mouse.y = e.touches[0].clientY;
+        }
+      });
+
+      window.addEventListener('touchmove', e => {
+        lastTouchTime = Date.now();
+        if (e.touches.length > 0) {
+          mouse.x = e.touches[0].clientX;
+          mouse.y = e.touches[0].clientY;
+        }
+      });
+
+      window.addEventListener('touchend', resetMouse);
+      window.addEventListener('touchcancel', resetMouse);
 
       init();
       animate();
