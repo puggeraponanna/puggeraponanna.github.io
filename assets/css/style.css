@@ -129,6 +129,7 @@ header.scrolled {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 20px;
 }
 
 .site-title {
@@ -144,6 +145,8 @@ nav {
     display: flex;
     gap: 32px;
     align-items: center;
+    margin-left: auto;
+    /* Push nav and toggle to the right */
 }
 
 nav a {
@@ -422,6 +425,13 @@ footer {
 .theme-toggle:hover {
     background: var(--color-surface-dim);
     border-color: var(--color-primary);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .theme-toggle {
+        padding: 6px;
+    }
 }
 
 /* Responsive */
