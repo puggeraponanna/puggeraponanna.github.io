@@ -172,11 +172,33 @@ header.scrolled {
 
 .site-title {
   font-family: var(--font-sans);
-  font-size: 1.05rem;
-  font-weight: 700;
+  font-size: 1.15rem;
+  font-weight: 800;
   color: var(--text);
-  letter-spacing: -0.3px;
+  letter-spacing: -0.4px;
   white-space: nowrap;
+  transition: color var(--transition);
+  position: relative;
+}
+
+.site-title:hover {
+  color: var(--primary);
+}
+
+.site-title::after {
+  content: '';
+  position: absolute;
+  bottom: 1px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  border-radius: 2px;
+  transition: width var(--transition);
+}
+
+.site-title:hover::after {
+  width: 100%;
 }
 
 nav {
