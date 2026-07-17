@@ -4,7 +4,7 @@ title: About
 ---
 
 <section class="hero-section">
-  <span class="hero-cursor">$ whoami<span class="cursor-blink"></span></span>
+  <span class="hero-cursor">$ <span class="hero-cursor-text"></span><span class="cursor-blink"></span></span>
   <h1>Crafting Scalable <span class="highlight">Backend</span> Systems</h1>
   <p class="hero-subtitle">9+ years of experience, architecting highly concurrent, event-driven distributed systems, high-throughput data pipelines, and cloud-native architectures.</p>
   <div class="hero-meta">
