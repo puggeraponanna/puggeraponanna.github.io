@@ -7,11 +7,17 @@
       <a href="{{ '/#experience' | relative_url }}">Experience</a>
       <a href="{{ '/#skills' | relative_url }}">Skills</a>
       <a href="{{ '/#contact' | relative_url }}">Contact</a>
-      <a href="/assets/resume.pdf" class="resume-link">Resume</a>
+      <a href="/assets/resume.pdf" class="resume-link" target="_blank">Resume</a>
     </nav>
 
-    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
       <span class="material-symbols-outlined theme-icon">dark_mode</span>
+    </button>
+
+    <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Menu">
+      <span class="material-symbols-outlined">menu</span>
     </button>
   </div>
 </header>
+
+<div id="mobile-overlay" class="mobile-overlay"></div>
