@@ -6,7 +6,7 @@ title: About
 
 <section class="hero-section">
   <h1>Crafting Scalable <span class="highlight">Backend</span> Systems</h1>
-  <p class="hero-subtitle">8+ years of experience, engineering resilient microservices, high-throughput data pipelines, and cloud-native architectures.</p>
+  <p class="hero-subtitle">9+ years of experience, architecting highly concurrent, event-driven distributed systems, high-throughput data pipelines, and cloud-native architectures.</p>
 </section>
 
 <div id="experience"></div>
@@ -14,46 +14,48 @@ title: About
 ## Experience
 
 <div class="card" markdown="1">
+### Oolio - Senior Software Engineer (Backend - Golang)
+*Mar 2026 – Present*
+- **Architected event-driven inventory depletion engine** in Go (PostgreSQL, NATS JetStream) that auto-deducts stock from POS orders and production runs via a recipe/container cascade, with an idempotent Reserve - Commit - Reverse lifecycle safe against event replay and duplicate ingestion.
+- **Built organization-level authorization** for the Products API using Open Policy Agent (OPA) and ReBAC, extracting policies into a standalone Kubernetes sidecar and enforcing granular, location-scoped access control behind a feature flag with zero impact to existing tenants.
+- **Delivered both systems on a domain-driven, hexagonal Go architecture** with 600+ tests, including a testcontainer-backed integration suite (real PostgreSQL + NATS) for end-to-end correctness.
+</div>
+
+<div class="card" markdown="1">
 ### ANZ - Software Engineer (Backend - Golang, Python)
-*Feb 2024 – Present*
+*Feb 2024 – Feb 2026*
 - **Architected event-driven data pipeline** in Go on Cloud Run (Terraform IaC) that decouples systems via Pub/Sub events, parsing and loading into BigQuery to enable async processing, analytics, and data product consumption across teams.
 - **Built scalable data products** using dbt transformations on BigQuery, delivering standardized datasets that accelerated reporting and experimentation for multiple consumption teams.
 - **Engineered CI/CD pipelines** with GitHub Actions, automating deployments and proof-gathering to cut release turnaround time and boost deployment reliability.
 - **Rewrote legacy Java loan simulation tool** in Go, enhancing maintainability and enabling rapid validation of credit decision rulesets for analytics generation.
 - **Implemented Cloud Run-based validation system** using Jupyter Notebooks to verify post-credit-decision loan outcomes, ensuring data integrity across pipelines.
 - **Developed gRPC APIs** and extended credit decisioning system features, supporting new lending scenarios with improved security and performance.
-- **Integrated observability stack** with Prometheus, Grafana, and Jaeger/OpenTelemetry to monitor distributed workflows and optimize system reliability.
 </div>
 
 <div class="card" markdown="1">
 ### Sequoia - Backend Engineer (Backend - Golang, Python, Node)
 *Dec 2021 – Feb 2024*
-- **Architected and implemented full-stack backend** for employment offer management system in Go and MongoDB, orchestrating end-to-end lifecycle from offer creation through digital acceptance.
+- **Architected and implemented backend service** for employment offer management system in Go and MongoDB, orchestrating end-to-end lifecycle from offer creation through digital acceptance.
 - **Engineered Redis-MongoDB hybrid caching layer**, reducing query latency and database load while maintaining data consistency across distributed microservices.
 - **Designed state machine-based workflow engine** with event-driven callbacks, enabling complex multi-stage offer approval processes with automated notifications.
 - **Established comprehensive unit testing framework** with CI integration, improving code coverage and enabling rapid feature iteration with confidence.
 - **Built production-grade client-side encryption system** for S3 document storage with secure one-time access links, including zero-downtime migration tooling for existing files.
 - **Implemented high-performance goroutine worker pool** with dynamic scaling and graceful shutdown, improving document generation throughput by 3x while preventing resource exhaustion.
-- **Designed and deployed reverse proxy gateway** with configurable rate limiting, custom rule engine, and DDoS protection, securing public-facing APIs.
 </div>
 
 <div class="card" markdown="1">
 ### Juspay - Software Development Engineer (Backend - Haskell)
 *Jun 2021 - Dec 2021*
-- **Architected OCEN-compliant loan origination system** in Haskell, orchestrating integrations across loan service providers, account aggregators, and credit bureaus for real-time borrower assessment.
+- **Architected event-driven, OCEN-compliant loan origination system** in Haskell utilizing Redis Streams for asynchronous processing, orchestrating complex integrations across loan service providers, account aggregators, and credit bureaus for real-time borrower assessment.
 - **Built a flexible business rule engine** with configurable decision trees, enabling lenders to define custom credit policies while maintaining regulatory compliance and audit trails.
-- **Engineered event-driven workflow system** using Redis Streams for asynchronous loan processing, ensuring OCEN protocol compliance.
 - **Re-engineered loan application onboarding flow** with progressive disclosure and intelligent form validation, achieving improvements in completion rate (27% to 91%).
-- **Contributed to engineering team growth** as technical interviewer and hackathon organizer, helping scale the credit platform team during rapid product expansion.
 </div>
 
 <div class="card" markdown="1">
 ### Aurigo - Senior Software Engineer (Backend - C#)
 *Jun 2017 - May 2021*
-- **Engineered end-to-end Bid Management System** automating procurement workflows for state contracts, including online bidding, vendor management, and automated award processing.
-- **Designed FMIS integration layer** using XML-based data exchange, enabling real-time financial data synchronization between Masterworks and legacy finance systems.
-- **Developed Windows service based job scheduler** with retry logic and error handling, automating bidirectional data integration flows with external systems.
-- **Enhanced unit price search** with advanced filtering and caching, reducing contractor search time and improving bid preparation efficiency for department staff.
+- **Architected end-to-end state contract procurement platform**, automating bidding workflows and ensuring seamless, real-time financial synchronization with legacy systems.
+- **Optimized unit price search** via advanced caching, significantly reducing search latency and enhancing bid preparation efficiency for department stakeholders.
 </div>
 
 <div id="skills"></div>
@@ -62,12 +64,13 @@ title: About
 
 <ul class="skills-list">
 <li><strong>Languages</strong> <span>Golang, Python, Haskell, C#, Javascript, SQL, Bash</span></li>
-<li><strong>Frameworks</strong> <span>Gin, FastAPI, Flask, Node, .NET</span></li>
-<li><strong>Cloud & Infra</strong> <span>GCP, AWS, Cloud Run, Terraform, Kubernetes, Docker, Pub/Sub, Kinesis</span></li>
-<li><strong>Databases</strong> <span>BigQuery, Spanner, PostgreSQL, MySQL, MongoDB, Redis, DynamoDB</span></li>
-<li><strong>Observability</strong> <span>Prometheus, Grafana, Datadog, Jaeger, OpenTelemetry, CloudWatch</span></li>
-<li><strong>APIs & Data</strong> <span>gRPC, REST, Protobuf, WebSockets, Apache Beam, dbt, Temporal</span></li>
-<li><strong>DevOps</strong> <span>Github Actions, Renovate</span></li>
+<li><strong>Frameworks/Runtimes</strong> <span>Gin, Chi, FastAPI, Flask, Node</span></li>
+<li><strong>Cloud & Tooling</strong> <span>GCP, AWS, Cloud Run, Kubernetes, Docker, Pub/Sub, Kinesis, NATS</span></li>
+<li><strong>AI-Assisted Development</strong> <span>Claude, Gemini, AI-Integrated Testing, Prompt Engineering</span></li>
+<li><strong>Databases</strong> <span>BigQuery, Spanner, PostgreSQL, MySQL, MongoDB, Redis</span></li>
+<li><strong>Data & ETL</strong> <span>Apache Beam, dbt, Jupyter Notebooks</span></li>
+<li><strong>Workflows/Orchestration</strong> <span>Temporal</span></li>
+<li><strong>APIs & Messaging</strong> <span>gRPC, REST, Protobuf, WebSockets, OAuth/JWT</span></li>
 </ul>
 
 <div id="education"></div>
