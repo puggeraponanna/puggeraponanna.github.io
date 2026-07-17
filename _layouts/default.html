@@ -197,57 +197,6 @@
 
         setTimeout(type, 800);
       }
-
-      var dot = document.createElement('div');
-      dot.className = 'cursor-dot';
-      var ring = document.createElement('div');
-      ring.className = 'cursor-ring';
-      var glow = document.createElement('div');
-      glow.className = 'cursor-glow';
-      document.body.appendChild(dot);
-      document.body.appendChild(ring);
-      document.body.appendChild(glow);
-
-      var mouseX = 0, mouseY = 0;
-      var dotX = 0, dotY = 0;
-      var ringX = 0, ringY = 0;
-      var glowX = 0, glowY = 0;
-
-      document.addEventListener('mousemove', function(e) {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-      });
-
-      document.querySelectorAll('a, button, .skill-tag, .hero-badge, .timeline-item').forEach(function(el) {
-        el.addEventListener('mouseenter', function() { ring.classList.add('hover'); });
-        el.addEventListener('mouseleave', function() { ring.classList.remove('hover'); });
-      });
-
-      var textAreas = document.querySelectorAll('h1, h2, h3, p, li, .hero-cursor, .skill-tag, .site-title, .contact-btn');
-      textAreas.forEach(function(el) {
-        el.addEventListener('mouseenter', function() { glow.classList.add('active'); });
-        el.addEventListener('mouseleave', function() { glow.classList.remove('active'); });
-      });
-
-      function animateCursor() {
-        dotX += (mouseX - dotX) * 0.5;
-        dotY += (mouseY - dotY) * 0.5;
-        ringX += (mouseX - ringX) * 0.15;
-        ringY += (mouseY - ringY) * 0.15;
-        glowX += (mouseX - glowX) * 0.08;
-        glowY += (mouseY - glowY) * 0.08;
-
-        dot.style.left = dotX + 'px';
-        dot.style.top = dotY + 'px';
-        ring.style.left = ringX + 'px';
-        ring.style.top = ringY + 'px';
-        glow.style.left = glowX + 'px';
-        glow.style.top = glowY + 'px';
-
-        requestAnimationFrame(animateCursor);
-      }
-
-      animateCursor();
     })();
   </script>
 </body>
